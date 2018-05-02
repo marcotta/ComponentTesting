@@ -1,0 +1,6 @@
+/* 
+  Localizable.strings
+  weather
+*/
+
+"CW: City Information Required for product type::expanded_forecast_cw100" = "City not found";

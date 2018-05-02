@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose City View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ChooseCityViewController" id="BYZ-38-t0r" customClass="ChooseCityViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kav-Me-mKW">
+                                <rect key="frame" x="20" y="70" width="335" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ylt-rc-xsl">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cry-Sb-NQW">
+                                        <rect key="frame" x="0.0" y="50" width="335" height="30"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gHW-dS-Psp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kav-Me-mKW" secondAttribute="trailing" constant="20" id="6y5-mf-9Bq"/>
+                            <constraint firstItem="kav-Me-mKW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eEQ-fM-c2f"/>
+                            <constraint firstItem="kav-Me-mKW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="epj-zM-kSi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lqy-jK-Zvz"/>
+                    <connections>
+                        <outlet property="cityTextField" destination="Ylt-rc-xsl" id="EC4-Zc-Z5X"/>
+                        <outlet property="sendButton" destination="cry-Sb-NQW" id="aAh-Xh-0Jn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424.80000000000001" y="89.505247376311857"/>
+        </scene>
+        <!--Seven Days Forecasts View Controller-->
+        <scene sceneID="tdh-TR-NAm">
+            <objects>
+                <viewController storyboardIdentifier="SevenDaysForecastsViewController" id="PjM-fm-mH5" customClass="SevenDaysForecastsViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hDO-gi-oNQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6x-y9-PF9">
+                                <rect key="frame" x="20" y="40" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h6G-H9-vms">
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E5P-oK-dCB" firstAttribute="bottom" secondItem="h6G-H9-vms" secondAttribute="bottom" id="8NA-cx-2bx"/>
+                            <constraint firstItem="Y6x-y9-PF9" firstAttribute="top" secondItem="E5P-oK-dCB" secondAttribute="top" constant="20" id="9vG-gJ-ySe"/>
+                            <constraint firstItem="Y6x-y9-PF9" firstAttribute="leading" secondItem="E5P-oK-dCB" secondAttribute="leading" constant="20" id="LT2-qL-uSt"/>
+                            <constraint firstItem="E5P-oK-dCB" firstAttribute="trailing" secondItem="Y6x-y9-PF9" secondAttribute="trailing" constant="20" id="VOS-Qp-3zv"/>
+                            <constraint firstItem="h6G-H9-vms" firstAttribute="top" secondItem="Y6x-y9-PF9" secondAttribute="bottom" constant="20" id="md7-ZW-oNF"/>
+                            <constraint firstItem="h6G-H9-vms" firstAttribute="leading" secondItem="E5P-oK-dCB" secondAttribute="leading" id="xPT-AS-K89"/>
+                            <constraint firstItem="E5P-oK-dCB" firstAttribute="trailing" secondItem="h6G-H9-vms" secondAttribute="trailing" id="ySc-Vx-dcv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E5P-oK-dCB"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="Y6x-y9-PF9" id="bAG-HS-uvl"/>
+                        <outlet property="tableView" destination="h6G-H9-vms" id="Vwd-C5-cgQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hA9-us-aVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="806"/>
+        </scene>
+    </scenes>
+</document>
